@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/emoji2fa/db" VERSION="20260416" COMMENT="Tabla de sesiones verificadas del plugin local_emoji2fa">
+  <TABLES>
+    <TABLE NAME="local_emoji2fa_sessions" COMMENT="Registra cuándo cada usuario pasó por última vez la verificación de emojis">
+      <FIELDS>
+        <FIELD NAME="id"            TYPE="int"  LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid"        TYPE="int"  LENGTH="10" NOTNULL="true" COMMENT="ID del usuario de Moodle"/>
+        <FIELD NAME="last_verified" TYPE="int"  LENGTH="10" NOTNULL="true" COMMENT="Timestamp Unix de la última verificación superada"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="userid"  TYPE="unique"  FIELDS="userid"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
